@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int number, firstDigit, lastDigit;
+
+    // Input a number from the user
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    // Find the last digit (remainder when divided by 10)
+    lastDigit = number % 10;
+
+    // Find the first digit by repeatedly dividing by 10
+    while (number >= 10) {
+        number /= 10;
+    }
+    firstDigit = number;
+
+    // Output the first and last digits
+    printf("First digit: %d\n", firstDigit);
+    printf("Last digit: %d\n", lastDigit);
+
+    return 0;
+}
