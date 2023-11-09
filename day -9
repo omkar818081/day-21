@@ -1,0 +1,215 @@
+#include <stdio.h>
+
+void main()
+
+(int num) {
+    if (num <= 1) {
+        return false;
+    }
+    if (num <= 3) {
+        return true;
+    }
+    if (num % 2 == 0 || num % 3 == 0) {
+        return false;
+    }
+
+    for (int i = 5; i * i <= num; i += 6) {
+        if (num % i == 0 || num % (i + 2) == 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+int main() {
+    int n, sum = 0;
+
+    printf("Enter a positive integer (n): ");
+    scanf("%d", &n);
+
+    for (int i = 2; i <= n; i++) {
+        if (isPrime(i)) {
+            sum += i;
+        }
+    }
+
+    printf("Sum of prime numbers between 1 and %d is: %d\n", n, sum);
+
+    return 0;
+}
+===============================================================================================================================================================================================
+#include <stdio.h>
+
+// Function to check if a number is prime
+int isPrime(int n) {
+    if (n <= 1) {
+        return 0; // 0 and 1 are not prime
+    }
+    for (int i = 2; i * i <= n; i++) {
+        if (n % i == 0) {
+            return 0; // n is divisible by i, so it's not prime
+        }
+    }
+    return 1; // n is prime
+}
+
+// Function to find and print prime factors of a number
+void primeFactors(int n) {
+    // Check for and print all the 2s
+    while (n % 2 == 0) {
+        printf("2 ");
+        n = n / 2;
+    }
+    
+    // Check for and print other prime factors
+    for (int i = 3; i <= n; i = i + 2) {
+        while (n % i == 0) {
+            if (isPrime(i)) {
+                printf("%d ", i);
+            }
+            n = n / i;
+        }
+    }
+    
+    if (n > 1) {
+        // If the remaining number is greater than 1, it is a prime factor
+        printf("%d ", n);
+    }
+}
+
+int main() {
+    int num;
+    printf("Enter a positive integer: ");
+    scanf("%d", &num);
+
+    if (num <= 1) {
+        printf("Prime factors are not defined for numbers less than 2.\n");
+    } else {
+        printf("Prime factors of %d are: ", num);
+        primeFactors(num);
+        printf("\n");
+    }
+
+    return 0;
+}
+=========================================================================================================================================================================================
+# include<stdio.h>
+void main()
+
+{
+    int n;
+    int i;
+    printf("plzz enter a no /n");
+    scanf("%d,&n");
+
+    printf("enter arr eleimts /n");
+{
+    for(i = 0;i < n;i++);
+    scanf("%d,&arr[i]");
+
+}
+}
+===================================================================================================================================================
+#include <stdio.h>
+
+int main() {
+    int n;
+
+    // Ask the user for the number of elements in the array
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    // Declare an array with static memory allocation
+    int arr[n];
+
+    // Input elements into the array
+    printf("Enter %d integers:\n", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // Create an array to store the frequency of each element
+    int frequency[n];
+    for (int i = 0; i < n; i++) {
+        frequency[i] = -1; // Initialize frequency to -1
+    }
+
+    // Count the frequency of each element
+    for (int i = 0; i < n; i++) {
+        int count = 1;
+        for (int j = i + 1; j < n; j++) {
+            if (arr[i] == arr[j]) {
+                count++;
+                frequency[j] = 0; // Mark as visited
+            }
+        }
+        if (frequency[i] != 0) {
+            frequency[i] = count;
+        }
+    }
+
+    // Display the frequency of each element
+    printf("Frequency of each element:\n");
+    for (int i = 0; i < n; i++) {
+        if (frequency[i] != 0) {
+            printf("%d occurs %d times\n", arr[i], frequency[i]);
+        }
+    }
+
+    return 0;
+}
+=========================================================================================================================
+
+#include <stdio.h>
+
+int main() {
+  int number, i, isPrime = 0;
+
+  printf("Enter any number: ");
+  scanf("%d", &number);
+
+  // Iterate from 2 to number/2
+  for (i = 2; i <= number / 2; i++) {
+    // If number is divisible by any number between 2 and number/2, it is not prime
+    if (number % i == 0) {
+      isPrime = 1;
+      break;
+    }
+  }
+
+  // If number is not divisible by any number between 2 and number/2, it is prime
+  if (isPrime == 0) {
+    printf("%d is a prime number.", number);
+  } else {
+    printf("%d is not a prime number.", number);
+  }
+
+  return 0;
+}
+=======================================================================================================================================
+#include <stdio.h>
+
+void main()
+{
+int n, 1;
+
+printf("Entre a number \n");
+scanf("%d",&n);
+for (i = 2; i < n;i++)
+{
+    if (n% i == 0)
+    {
+        printf("%d is not prime number\n,n");
+        flag =1;
+        break;
+
+    }
+}
+if (flag ==0)
+
+}
+
+
+
+======================================================================================================================================
